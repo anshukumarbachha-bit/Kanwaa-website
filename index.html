@@ -3,87 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Kanwaa | Pure Mineral Water - Bhagalpur Division</title>
+    <title>KANWAA Premium | Beyond Mineral Water</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo">
-            <img src="logo.png" alt="Kanwaa Logo">
+            <img src="logo.png" alt="Kanwaa">
             <div class="brand-text">
                 <span class="main-name">KANWAA</span>
-                <span class="tagline">Pure Drinking Water</span>
+                <span class="tagline">The Purity Authority</span>
             </div>
         </div>
         <div class="nav-links">
-            <a href="#hero">Home</a>
-            <a href="#about">Trust</a>
-            <a href="#products">Products</a>
-            <a href="https://wa.me/919508810630" class="nav-cta">Direct Order</a>
+            <a href="#hero">Purity</a>
+            <a href="#process">Science</a>
+            <a href="#products">Store</a>
+            <a href="https://wa.me/919508810630" class="nav-cta">Direct Call</a>
         </div>
     </nav>
 
     <section id="hero" class="hero-section">
         <div class="hero-content">
-            <h2 class="reveal">The Gold Standard of Purity</h2>
-            <h1 class="reveal">Next Gen <span>Hydration</span> for Bihar.</h1>
-            <p class="reveal">Not just water, but a commitment to health. We deliver 7-stage purified, mineral-enriched water directly from our high-tech facility to your home.</p>
-            <div class="hero-btns reveal">
-                <a href="#products" class="btn-main">View Products</a>
-                <a href="#about" class="btn-secondary">Our Science</a>
+            <h2 class="pre-title">ESTABLISHED 2026</h2>
+            <h1>Uncompromising <span>Purity.</span></h1>
+            <p>Every drop of Kanwaa is engineered through a 7-stage molecular purification process, re-enriched with Magnesium and Potassium for a crisp, healthy lifestyle.</p>
+            <div class="hero-btns">
+                <a href="#products" class="btn-main">Shop Premium Packs</a>
+                <a href="#process" class="btn-outline">Watch Science</a>
             </div>
         </div>
         <div class="hero-visual">
-            <img src="bottle.png" class="floating" alt="Kanwaa Water">
+            <img src="bottle.png" class="floating" alt="Kanwaa Premium">
         </div>
     </section>
 
     <section class="delivery-checker">
         <div class="checker-card">
-            <h3>Check Delivery Availability</h3>
-            <p>We are expanding rapidly in Bhagalpur, Purnea, and Khagaria.</p>
+            <i class="fas fa-truck-loading"></i>
+            <h3>Check Priority Delivery</h3>
+            <p>Currently serving Bhagalpur, Purnea & Khagaria Prime Zones.</p>
             <div class="input-group">
-                <input type="text" id="pincodeInput" placeholder="Enter 6-digit Pincode">
-                <button onclick="checkPincode()">Check Area</button>
+                <input type="number" id="pincodeInput" placeholder="6-Digit Pincode">
+                <button onclick="checkPincode()">Verify Area</button>
             </div>
             <p id="pincodeResult" class="status-msg"></p>
         </div>
     </section>
 
-    <section id="about" class="about-brand">
-        <div class="about-container">
-            <div class="about-text">
-                <span class="pre-title">Why Kanwaa?</span>
-                <h2>What Makes Our Water Different?</h2>
-                <p>At Kanwaa, we believe that water is the foundation of life. Unlike local suppliers, we don't just filter water; we engineer it for health. Our water undergoes a rigorous <strong>7-Stage Purification Process</strong> including Reverse Osmosis (RO), Ultra-Violet (UV) sterilization, and Ozone treatment to ensure 99.9% purity.</p>
-                <p>Most bottled water loses essential minerals during filtration. Kanwaa re-introduces Magnesium, Potassium, and Calcium in precise amounts to maintain a perfect pH balance, giving you a crisp, refreshing taste that supports your body's vital functions.</p>
-                <div class="about-stats">
-                    <div class="stat-card"><h4>7+</h4><p>Filtration Stages</p></div>
-                    <div class="stat-card"><h4>0.00%</h4><p>Human Contact</p></div>
-                </div>
+    <section id="process" class="science-section">
+        <div class="section-title">
+            <span>THE KANWAA STANDARD</span>
+            <h2>How We Redefine Water</h2>
+        </div>
+        <div class="science-grid">
+            <div class="science-item">
+                <i class="fas fa-microscope"></i>
+                <h3>Double Lab Tested</h3>
+                <p>Every batch undergoes 24 rigorous quality checks. We test for TDS, pH, and Microbial safety every 4 hours.</p>
+            </div>
+            <div class="science-item">
+                <i class="fas fa-vial"></i>
+                <h3>Mineral Re-Engineering</h3>
+                <p>We don't just filter; we enrich. We add exact amounts of Calcium and Magnesium lost during RO.</p>
+            </div>
+            <div class="science-item">
+                <i class="fas fa-robot"></i>
+                <h3>Zero Human Contact</h3>
+                <p>Fully automated bottling line. From sterilization to sealing, no human touch, 100% hygiene.</p>
             </div>
         </div>
     </section>
 
-    <section id="products" class="product-reveal-section">
+    <section id="products" class="store-section">
         <div class="section-title">
-            <span>Our Premium Range</span>
-            <h2>Choose Your Pack</h2>
+            <span>EXCLUSIVE CATALOG</span>
+            <h2>Select Your Hydration</h2>
         </div>
         
         <div class="product-grid">
             <div class="p-card">
-                <div class="p-img"><img src="can-20l.png" alt="20L Jar"></div>
+                <div class="p-img"><img src="can-20l.png" alt="Jar"></div>
                 <div class="p-info">
-                    <span class="tag">Daily Usage</span>
-                    <h3>20 Litre Premium Jar</h3>
-                    <p>Ideal for homes & offices. High-grade food-safe jars.</p>
+                    <h3>20L Premium Jar</h3>
+                    <p>Food-grade, high-impact resistant jars for families.</p>
                     <div class="p-footer">
                         <span class="price">₹100<small>/Unit</small></span>
-                        <div class="qty-control">
+                        <div class="qty">
                             <button onclick="changeQty('can20', -1)">-</button>
                             <span id="can20-qty">0</span>
                             <button onclick="changeQty('can20', 1)">+</button>
@@ -92,15 +101,14 @@
                 </div>
             </div>
 
-            <div class="p-card">
-                <div class="p-img"><img src="bottle.png" alt="1L Bottle"></div>
+            <div class="p-card featured">
+                <div class="p-img"><img src="bottle.png" alt="1L"></div>
                 <div class="p-info">
-                    <span class="tag">Retail Pack</span>
-                    <h3>1 Litre Classic Box</h3>
-                    <p>Bulk Order Only (Min. 50 Boxes). Each box contains 12 bottles.</p>
+                    <h3>1L Classic Box</h3>
+                    <p>Bulk pack of 12 bottles. Perfect for retail & travel.</p>
                     <div class="p-footer">
                         <span class="price">₹120<small>/Box</small></span>
-                        <div class="qty-control">
+                        <div class="qty">
                             <button onclick="changeQty('b1l', -1)">-</button>
                             <span id="b1l-qty">0</span>
                             <button onclick="changeQty('b1l', 1)">+</button>
@@ -110,14 +118,13 @@
             </div>
 
             <div class="p-card">
-                <div class="p-img"><img src="bottle-500ml.png" alt="500ml Bottle"></div>
+                <div class="p-img"><img src="bottle-500ml.png" alt="500ml"></div>
                 <div class="p-info">
-                    <span class="tag">Event Pack</span>
                     <h3>500ml Compact Box</h3>
-                    <p>Bulk Order Only (Min. 50 Boxes). Each box contains 24 bottles.</p>
+                    <p>Bulk pack of 24 bottles. Ideal for high-end events.</p>
                     <div class="p-footer">
                         <span class="price">₹90<small>/Box</small></span>
-                        <div class="qty-control">
+                        <div class="qty">
                             <button onclick="changeQty('b500', -1)">-</button>
                             <span id="b500-qty">0</span>
                             <button onclick="changeQty('b500', 1)">+</button>
@@ -128,46 +135,45 @@
         </div>
     </section>
 
-    <section class="trust-deep-dive">
-        <div class="content-wrapper">
-            <div class="trust-column">
-                <h3>Our Scientific Process</h3>
-                <p>Every bottle of Kanwaa is a result of advanced Ozonisation. This process is 3000x faster than chlorine in killing bacteria, without leaving any harmful chemical residue. We test our water every 4 hours in our in-house lab.</p>
-            </div>
-            <div class="trust-column">
-                <h3>Zero Human Contact</h3>
-                <p>Our bottling plant is fully automated. From the initial jar washing to the final sealing, no human hands touch the product. This ensures 100% hygiene and safety for you and your family.</p>
-            </div>
+    <div id="loginModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3>Complete Your Order</h3>
+            <p>Please provide details for professional delivery.</p>
+            <input type="text" id="userName" placeholder="Full Name">
+            <input type="tel" id="userPhone" placeholder="Mobile Number">
+            <textarea id="userAddress" placeholder="Detailed Delivery Address"></textarea>
+            <button class="btn-confirm" onclick="finalCheckout()">Submit & Order via WhatsApp</button>
+            <button class="btn-close" onclick="closeModal()">Close</button>
         </div>
-    </section>
-
-    <footer class="main-footer">
-        <div class="footer-grid">
-            <div class="footer-info">
-                <h3>KANWAA</h3>
-                <p>Defining the gold standard of mineral water in Bhagalpur, Purnea, and Khagaria. Pure. Safe. Reliable.</p>
-            </div>
-            <div class="footer-contact">
-                <h4>Reach Us</h4>
-                <p><i class="fas fa-map-marker-alt"></i> Imali Chowk, Bihpur, Bhagalpur, Bihar</p>
-                <p><i class="fas fa-phone"></i> +91 95088 10630</p>
-                <p><i class="fas fa-envelope"></i> support@kanwaa.com</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Kanwaa Waters. Professional Grade Hydration.</p>
-        </div>
-    </footer>
+    </div>
 
     <div id="checkout-bar" class="checkout-bar hide">
         <div class="total-wrap">
-            <span>Estimated Bill</span>
+            <span>Subtotal</span>
             <h3 id="total-amt">₹0</h3>
         </div>
-        <button class="btn-final" onclick="sendToWhatsApp()">
-            Confirm Order via WhatsApp <i class="fab fa-whatsapp"></i>
+        <button class="btn-final" onclick="openModal()">
+            Place Order <i class="fab fa-whatsapp"></i>
         </button>
     </div>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="f-col">
+                <h3>KANWAA Waters</h3>
+                <p>The gold standard of mineral water services in Narayanpur, Bihar. We are dedicated to providing the highest standard of safety.</p>
+            </div>
+            <div class="f-col">
+                <h4>Operations</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Imali Chowk, Bihpur, Bhagalpur</p>
+                <p><i class="fas fa-phone"></i> +91 95088 10630</p>
+                <p><i class="fas fa-envelope"></i> admin@kanwaa.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 KANWAA Premium Waters. All rights reserved.
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
