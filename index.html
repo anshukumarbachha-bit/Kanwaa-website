@@ -11,8 +11,8 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
 body{
-background:#f5fbff;
-color:#333;
+background:#f8fcff;
+color:#222;
 }
 
 /* NAVBAR */
@@ -20,14 +20,14 @@ nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 40px;
-background:rgba(255,255,255,0.7);
-backdrop-filter:blur(10px);
+padding:18px 40px;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
 position:sticky;
 top:0;
 z-index:1000;
 }
-nav img{height:45px;}
+nav h2{color:#0099cc;font-weight:700;}
 nav a{margin:0 15px;text-decoration:none;color:#333;font-weight:500;}
 
 /* HERO */
@@ -36,12 +36,15 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:80px 40px;
-background:linear-gradient(135deg,#00AEEF,#00C851);
+background:linear-gradient(135deg,#0099cc,#00c6ff);
 color:white;
 flex-wrap:wrap;
 }
 
-.hero-text{max-width:500px;}
+.hero-text{
+max-width:520px;
+}
+
 .hero h1{
 font-size:50px;
 line-height:1.2;
@@ -50,31 +53,30 @@ line-height:1.2;
 .hero p{
 margin-top:15px;
 font-size:18px;
+opacity:0.9;
 }
 
 .btn{
 background:white;
-color:#00AEEF;
+color:#0099cc;
 padding:14px 30px;
-border-radius:40px;
+border-radius:50px;
 text-decoration:none;
 display:inline-block;
 margin-top:25px;
 font-weight:600;
 transition:0.3s;
 }
+
 .btn:hover{
-transform:scale(1.05);
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
 
+/* BOTTLE */
 .hero img{
-width:300px;
-animation:float 4s infinite;
-}
-@keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-20px);}
-100%{transform:translateY(0);}
+width:280px;
+filter:drop-shadow(0 25px 40px rgba(0,0,0,0.25));
 }
 
 /* SECTION */
@@ -83,6 +85,7 @@ padding:70px 20px;
 text-align:center;
 }
 
+/* CARDS */
 .cards{
 display:flex;
 flex-wrap:wrap;
@@ -95,11 +98,12 @@ padding:25px;
 margin:15px;
 border-radius:15px;
 width:260px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
 transition:0.3s;
 }
+
 .card:hover{
-transform:translateY(-10px);
+transform:translateY(-8px);
 }
 
 /* PROCESS */
@@ -108,11 +112,20 @@ display:flex;
 flex-wrap:wrap;
 justify-content:center;
 }
+
 .process div{
-background:#e3f2fd;
-padding:15px;
-margin:8px;
-border-radius:10px;
+background:#e6f7ff;
+padding:12px 18px;
+margin:6px;
+border-radius:8px;
+font-weight:500;
+}
+
+/* CONTACT */
+.contact{
+background:#0099cc;
+color:white;
+padding:60px 20px;
 }
 
 /* FOOTER */
@@ -120,7 +133,7 @@ footer{
 background:#111;
 color:white;
 text-align:center;
-padding:25px;
+padding:20px;
 }
 
 /* WHATSAPP */
@@ -130,7 +143,7 @@ bottom:25px;
 right:25px;
 background:#25D366;
 color:white;
-padding:18px;
+padding:16px;
 border-radius:50%;
 font-size:22px;
 text-decoration:none;
@@ -143,7 +156,7 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 
 <!-- NAVBAR -->
 <nav>
-<img src="logo.png">
+<h2>Kanwaa 💧</h2>
 <div>
 <a href="#">Home</a>
 <a href="#about">About</a>
@@ -156,17 +169,17 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 <section class="hero">
 <div class="hero-text">
 <h1>Stay Pure<br>Stay Fresh 💧</h1>
-<p>Premium Drinking Water with RO + UV + Ozone Technology</p>
+<p>Clean, Safe & Hygienic Drinking Water from Bhagalpur</p>
 <a class="btn" href="https://wa.me/919508810630?text=Hello%20Kanwaa%20Water">Order Now</a>
 </div>
 
-<img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=500&q=80">
+<img src="https://pngimg.com/uploads/water_bottle/water_bottle_PNG98935.png">
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="section">
 <h2>About Kanwaa</h2>
-<p>Providing safe, hygienic and mineral-balanced water across Bhagalpur and beyond.</p>
+<p>We provide mineral-balanced drinking water using advanced RO, UV & Ozone purification.</p>
 </section>
 
 <!-- FEATURES -->
@@ -175,7 +188,7 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 <div class="cards">
 <div class="card">100% Pure Water</div>
 <div class="card">10,000 Bottles / Day</div>
-<div class="card">Advanced RO+UV+Ozone</div>
+<div class="card">RO + UV + Ozone Technology</div>
 </div>
 </section>
 
@@ -184,7 +197,7 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 <h2>Our Product</h2>
 <div class="card">
 <h3>1 Litre Bottle</h3>
-<p>Healthy • Safe • Hygienic</p>
+<p>Fresh • Safe • Hygienic</p>
 </div>
 </section>
 
@@ -203,9 +216,9 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section">
-<h2>Contact</h2>
-<p>📍 Jhandapur, Bhagalpur</p>
+<section id="contact" class="contact">
+<h2>Contact Us</h2>
+<p>📍 Jhandapur, Bihpur, Bhagalpur</p>
 <p>📞 9508810630</p>
 </section>
 
