@@ -1,4 +1,4 @@
-// 1. Serviceable Pincodes (Bhagalpur, Purnea, Khagaria)
+// 1. Serviceable Pincodes
 const serviceAreas = [
     "812001", "812002", "812003", "812004", "812005", "812006", "812007", 
     "813210", "813201", "813204", "813209", "853204", "853201",
@@ -7,11 +7,11 @@ const serviceAreas = [
     "851204", "851205", "851214", "851215", "851217", "848203", "851202"
 ]; 
 
-// 2. Updated Pricing (Box Wise for Bottles)
+// 2. Updated Pricing (Box Wise)
 const prices = { 
     can20: 100, // Per Unit
-    b1l: 120,   // Per Box (12 Bottles)
-    b500: 90    // Per Box (24 Bottles)
+    b1l: 120,   // Per Box (Min 50)
+    b500: 90    // Per Box (Min 50)
 };
 
 let cart = { can20: 0, b1l: 0, b500: 0 };
@@ -36,82 +36,93 @@ function checkPincode() {
     }
 }
 
-// 4. Quantity Change Logic (Buttons)
+// 4. Quantity Change Logic
 function changeQty(item, delta) {
-    // If it's a box item, ensure it starts at 50 if increased from 0
-    if ((item === 'b1l' || item === 'b500') && cart[item] === 0 && delta > 0) {
-        cart[item] = 50;
+    // Retail Packs (1L aur 500ml) ke liye 50 ka minimum limit handle karna
+    if (item === 'b1l' || item === 'b500') {
+        if (cart[item] === 0 && delta > 0) {
+            cart[item] = 50; // Pehli baar click karne par seedha 50 boxes
+        } else if (cart[item] === 50 && delta < 0) {
+            cart[item] = 0; // 50 se niche jane par seedha 0
+        } else {
+            cart[item] = Math.max(0, cart[item] + delta);
+        }
     } else {
+        // 20L Jar ke liye normal increment
         cart[item] = Math.max(0, cart[item] + delta);
     }
     
-    // Sync to UI
     syncUI(item);
-}
-
-// 5. Manual Input Logic (User can type numbers)
-function manualEntry(item, value) {
-    let num = parseInt(value) || 0;
-    cart[item] = num;
-    updateTotal();
 }
 
 function syncUI(item) {
     const qtyElement = document.getElementById(item + '-qty');
     if (qtyElement) {
-        // If it's a span/div
         qtyElement.innerText = cart[item];
-        // If you use input field instead, use: qtyElement.value = cart[item];
     }
     updateTotal();
 }
 
-// 6. Total Calculation with Minimum Constraints
+// 5. Total Calculation
 function updateTotal() {
     let total = (cart.can20 * prices.can20) + (cart.b1l * prices.b1l) + (cart.b500 * prices.b500);
-    document.getElementById('total-amt').innerText = '₹' + total;
+    
+    const totalElement = document.getElementById('total-amt');
+    if(totalElement) {
+        totalElement.innerText = '₹' + total.toLocaleString('en-IN'); // Format number
+    }
     
     const bar = document.getElementById('checkout-bar');
-    total > 0 ? bar.classList.remove('hide') : bar.classList.add('hide');
+    if(bar) {
+        total > 0 ? bar.classList.remove('hide') : bar.classList.add('hide');
+    }
 }
 
-// 7. Professional WhatsApp Order
+// 6. WhatsApp Order with Box Details
 function sendToWhatsApp() {
     let phoneNumber = "919508810630";
     let message = "⭐ *KANWAA PREMIUM WATER ORDER* ⭐\n\n";
-    let error = "";
 
-    // Validation for minimum 50 boxes
-    if(cart.b1l > 0 && cart.b1l < 50) error = "Minimum order for 1L Classic is 50 Boxes.";
-    if(cart.b500 > 0 && cart.b500 < 50) error = "Minimum order for 500ml Compact is 50 Boxes.";
-
-    if(error) {
-        alert(error);
+    // Double check minimum 50 boxes validation
+    if((cart.b1l > 0 && cart.b1l < 50) || (cart.b500 > 0 && cart.b500 < 50)) {
+        alert("Retail Packs (1L/500ml) require a minimum of 50 Boxes.");
         return;
     }
 
     let hasItems = false;
-    if(cart.can20 > 0) { message += `🔹 *20L Jar:* ${cart.can20} Units\n`; hasItems = true; }
-    if(cart.b1l > 0) { message += `🔹 *1L Classic:* ${cart.b1l} Boxes\n`; hasItems = true; }
-    if(cart.b500 > 0) { message += `🔹 *500ml Compact:* ${cart.b500} Boxes\n`; hasItems = true; }
+    if(cart.can20 > 0) { 
+        message += `🔹 *20L Jar:* ${cart.can20} Units\n`; 
+        hasItems = true; 
+    }
+    if(cart.b1l > 0) { 
+        message += `🔹 *1L Classic Box:* ${cart.b1l} Boxes\n`; 
+        hasItems = true; 
+    }
+    if(cart.b500 > 0) { 
+        message += `🔹 *500ml Compact Box:* ${cart.b500} Boxes\n`; 
+        hasItems = true; 
+    }
 
-    if(!hasItems) return alert("Please select items first!");
+    if(!hasItems) {
+        alert("Please add items to your cart first!");
+        return;
+    }
 
     let total = document.getElementById('total-amt').innerText;
-    message += `\n💰 *Total Amount: ${total}*\n`;
+    message += `\n💰 *Estimated Total: ${total}*\n`;
     message += "--------------------------------------\n";
-    message += "Please confirm my delivery schedule. ✅";
+    message += "Please confirm availability and delivery time. ✅";
 
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
 }
 
-// 8. Scroll Animation
+// 7. Scroll Animation
 const revealOnScroll = () => {
-    const reveals = document.querySelectorAll('.about-text, .trust-column, .feature-item, .retail-card');
+    const reveals = document.querySelectorAll('.reveal, .feature-item, .retail-card');
     reveals.forEach(el => {
         let windowHeight = window.innerHeight;
         let elementTop = el.getBoundingClientRect().top;
-        if (elementTop < windowHeight - 100) el.classList.add("active");
+        if (elementTop < windowHeight - 50) el.classList.add("active");
     });
 };
 
