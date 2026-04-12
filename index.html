@@ -2,18 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Kanwaa | Pure Mineral Water - Bhagalpur, Purnea, Khagaria</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * { box-sizing: border-box; }
+        body, html { 
+            overflow-x: hidden; /* Stops horizontal scroll */
+            width: 100%; 
+            margin: 0; 
+            padding: 0; 
+        }
+        .logo { display: flex; flex-direction: column; align-items: flex-start; }
+        .logo span { font-weight: 700; line-height: 1; font-size: 1.5rem; }
+        .logo .tagline { font-size: 0.65rem; letter-spacing: 1px; font-weight: 400; color: #007bff; text-transform: uppercase; }
+        
+        /* Ensures cards stay inside screen on mobile */
+        .checker-card, .feature-item, .retail-card {
+            max-width: 90vw !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo">
-            <img src="logo.png" alt="Kanwaa Logo">
-            <span>KANWAA</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <img src="logo.png" alt="Kanwaa Logo" style="height: 40px;">
+                <div>
+                    <span>KANWAA</span><br>
+                    <small class="tagline">Pure Drinking Water</small>
+                </div>
+            </div>
         </div>
         <div class="nav-links">
             <a href="#hero">Home</a>
@@ -50,118 +75,6 @@
         </div>
     </section>
 
-    <section id="about" class="about-brand">
-        <div class="about-container">
-            <div class="about-text">
-                <span>Our Journey</span>
-                <h2>Redefining Purity in Every Drop</h2>
-                <p>Founded with a mission to provide the highest standard of drinking water, <strong>Kanwaa</strong> has become a symbol of trust and health in Bihar. We recognized the need for safe, mineral-rich hydration accessible to every home.</p>
-                <p>Our facility utilizes global technologies to ensure your water is biologically safe, physically refreshing, and enriched with essential minerals.</p>
-            </div>
-            <div class="about-stats">
-                <div class="stat-card"><h4>7+</h4><p>Stages of Filtration</p></div>
-                <div class="stat-card"><h4>100%</h4><p>Ozone Treated</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="can-section" class="product-reveal-section">
-        <div class="product-container">
-            <div class="product-image">
-                <img src="can-20l.png" alt="20L Premium Can">
-            </div>
-            <div class="product-info">
-                <span class="premium-tag">DAILY ESSENTIAL</span>
-                <h2>20 Litre Premium Jar</h2>
-                <p>Perfect for homes and offices. Every drop undergoes a 7-stage purification process to ensure absolute purity and health.</p>
-                <div class="specs">
-                    <div class="spec-item"><i class="fas fa-check-circle"></i> Monthly Subscriptions Available</div>
-                    <div class="spec-item"><i class="fas fa-truck"></i> Free Local Delivery</div>
-                </div>
-                <div class="price-action">
-                    <span class="price">₹100</span>
-                    <div class="qty">
-                        <button onclick="changeQty('can20', -1)">-</button>
-                        <span id="can20-qty">0</span>
-                        <button onclick="changeQty('can20', 1)">+</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="features-section">
-        <div class="section-title">
-            <span>The Gold Standard</span>
-            <h2>Why Choose Kanwaa?</h2>
-        </div>
-        <div class="features-grid">
-            <div class="feature-item">
-                <div class="icon-box"><i class="fas fa-microscope"></i></div>
-                <h4>Double Lab Tested</h4>
-                <p>Every batch undergoes 24 rigorous quality checks before leaving our facility.</p>
-            </div>
-            <div class="feature-item">
-                <div class="icon-box"><i class="fas fa-vial"></i></div>
-                <h4>Added Minerals</h4>
-                <p>Enriched with Magnesium and Potassium for a crisp, healthy taste.</p>
-            </div>
-            <div class="feature-item">
-                <div class="icon-box"><i class="fas fa-recycle"></i></div>
-                <h4>Eco-Friendly</h4>
-                <p>We use 100% recyclable materials to ensure a greener planet.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="bottle-section" class="dark-section">
-        <div class="section-header">
-            <h2>Retail & Events Bulk Pack</h2>
-            <p>Available in Khagaria | Bhagalpur | Purnea</p>
-        </div>
-        <div class="retail-grid">
-            <div class="retail-card">
-                <img src="bottle.png" alt="1L Bottle">
-                <h3>1 Litre Classic</h3>
-                <p>Bulk Order Only (Min. 50 Boxes)</p>
-                <div class="price-action">
-                    <span class="price">₹12</span>
-                    <div class="qty">
-                        <button onclick="changeQty('b1l', -1)">-</button>
-                        <span id="b1l-qty">0</span>
-                        <button onclick="changeQty('b1l', 1)">+</button>
-                    </div>
-                </div>
-            </div>
-            <div class="retail-card">
-                <img src="bottle-500ml.png" alt="500ml Bottle">
-                <h3>500ml Compact</h3>
-                <p>Bulk Order Only (Min. 50 Boxes)</p>
-                <div class="price-action">
-                    <span class="price">₹8</span>
-                    <div class="qty">
-                        <button onclick="changeQty('b500', -1)">-</button>
-                        <span id="b500-qty">0</span>
-                        <button onclick="changeQty('b500', 1)">+</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="trust-deep-dive">
-        <div class="content-wrapper">
-            <div class="trust-column">
-                <h3>Our Science-Backed Process</h3>
-                <p>We utilize <strong>Ozonisation</strong>, ensuring that microscopic bacteria are neutralized without chemical aftertaste. Our RO precision level balances TDS perfectly for your body.</p>
-            </div>
-            <div class="trust-column">
-                <h3>Commitment to Hygiene</h3>
-                <p>Our 20L jars go through automated sterilization. With zero human contact from source to seal, we ensure 100% hygiene.</p>
-            </div>
-        </div>
-    </section>
-
     <footer class="main-footer">
         <div class="footer-grid">
             <div class="footer-info">
@@ -170,7 +83,7 @@
             </div>
             <div class="footer-contact">
                 <h4>Contact Us</h4>
-                <p><i class="fas fa-map-marker-alt"></i> Narayanpur, Bihar</p>
+                <p><i class="fas fa-map-marker-alt"></i> Imali Chowk, Bihpur, Bhagalpur, Bihar</p>
                 <p><i class="fas fa-phone"></i> +91 95088 10630</p>
                 <p><i class="fas fa-envelope"></i> support@kanwaa.com</p>
             </div>
