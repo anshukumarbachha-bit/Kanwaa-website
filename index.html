@@ -10,14 +10,6 @@
 <body>
 
     <header>
-        <div class="top-bar">
-            <span><i class="fas fa-map-marker-alt"></i> Jhandapur, Bihpur, Bhagalpur - 853201</span>
-            <div class="contact-info">
-                <span><i class="fas fa-phone"></i> 9508810630</span>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
         <nav>
             <div class="logo">
                 <img src="logo.png" alt="Kanwaa Logo">
@@ -25,13 +17,10 @@
             </div>
             <ul>
                 <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Product</a></li>
-                <li><a href="#">Process</a></li>
-                <li><a href="#">Distributor</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#delivery">Delivery Areas</a></li>
             </ul>
-            <a href="https://wa.me/919508810630" class="btn-whatsapp-nav"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+            <a href="https://wa.me/919508810630" class="btn-whatsapp-nav"><i class="fab fa-whatsapp"></i> Chat with Us</a>
         </nav>
     </header>
 
@@ -39,75 +28,63 @@
         <div class="hero-content">
             <span class="badge"><i class="fas fa-tint"></i> 100% PURE & SAFE</span>
             <h1>STAY PURE<br>STAY FRESH</h1>
-            <p><strong>Kanwaa Pure Drinking Water</strong> - Safe, Hygienic &<br>Mineral Balanced Water for a Healthy Life.</p>
-            <div class="hero-btns">
-                <a href="#" class="btn-primary"><i class="fab fa-whatsapp"></i> Order Now on WhatsApp</a>
-                <a href="#" class="btn-secondary">Know More</a>
-            </div>
+            <p>Bihar's Trusted Mineral Water. Now delivering in Bihpur, Khagaria, Bhagalpur & Purnea.</p>
         </div>
         <div class="hero-image">
-            <img src="bottle.png" alt="Kanwaa 1 Litre Bottle">
+            <img src="bottle.png" alt="Kanwaa Bottle">
         </div>
     </section>
 
-    <div class="stats-bar">
-        <div class="stat-item"><i class="fas fa-tint"></i> <strong>10,000</strong><br>Bottles Per Day</div>
-        <div class="stat-item"><i class="fas fa-shield-alt"></i> <strong>RO + UV</strong><br>Ozone Purification</div>
-        <div class="stat-item"><i class="fas fa-leaf"></i> <strong>Mineral</strong><br>Balanced Water</div>
-        <div class="stat-item"><i class="fas fa-map-marker-alt"></i> <strong>Bhagalpur</strong><br>Bihar, India</div>
+    <section id="products" class="products-section">
+        <h2 class="section-title">Hamare Products</h2>
+        <div class="product-grid">
+            
+            <div class="product-card">
+                <div class="tag green">Bihpur Only</div>
+                <img src="can-20l.png" alt="20 Litre Can">
+                <h3>20 Litre Can</h3>
+                <p class="price">₹100.00</p>
+                <p class="desc">Monthly Subscription Available</p>
+                <div class="qty-control">
+                    <button onclick="changeQty('can20', -1)">-</button>
+                    <span id="can20-qty">0</span>
+                    <button onclick="changeQty('can20', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="tag blue">Bulk Order Only</div>
+                <img src="bottle.png" alt="1 Litre Bottle">
+                <h3>1 Litre Bottle</h3>
+                <p class="price">₹12.00</p>
+                <p class="desc">Min. 50 Boxes (600 Bottles)</p>
+                <div class="qty-control">
+                    <button onclick="changeQty('b1l', -1)">-</button>
+                    <span id="b1l-qty">0</span>
+                    <button onclick="changeQty('b1l', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="tag blue">Bulk Order Only</div>
+                <img src="bottle-500ml.png" alt="500ml Bottle">
+                <h3>500ml Bottle</h3>
+                <p class="price">₹8.00</p>
+                <p class="desc">Min. 50 Boxes (600 Bottles)</p>
+                <div class="qty-control">
+                    <button onclick="changeQty('b500', -1)">-</button>
+                    <span id="b500-qty">0</span>
+                    <button onclick="changeQty('b500', 1)">+</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="order-footer">
+        <div class="total-display">Total Amount: <span id="total-amt">₹0</span></div>
+        <button class="btn-order" onclick="sendToWhatsApp()"><i class="fab fa-whatsapp"></i> Order on WhatsApp</button>
     </div>
 
-    <section class="about">
-        <div class="about-text">
-            <h5>ABOUT US</h5>
-            <h2>Purity You Can Trust!</h2>
-            <p>Kanwaa Pure Drinking Water is committed to providing 100% safe, hygienic and mineral-balanced drinking water. Using advanced RO, UV and Ozone technology, we ensure every drop is pure and fresh. Our mission is to deliver clean water to every home and contribute to a healthier society.</p>
-            <ul>
-                <li><i class="fas fa-check-circle"></i> Advanced Purification Technology</li>
-                <li><i class="fas fa-check-circle"></i> Hygienic & Automated Plant</li>
-                <li><i class="fas fa-check-circle"></i> Quality Checked & Certified</li>
-            </ul>
-            <a href="#" class="btn-blue">Learn More</a>
-        </div>
-        <div class="about-product">
-            <img src="bottle-stand.png" alt="1 Litre Pack">
-            <div class="product-info">
-                <h5>OUR PRODUCT</h5>
-                <h3>1 Litre Pack</h3>
-                <p>Perfect Size for Daily Use</p>
-                <ul>
-                    <li><i class="fas fa-tint"></i> 100% Pure & Safe</li>
-                    <li><i class="fas fa-heartbeat"></i> Healthy & Refreshing</li>
-                    <li><i class="fas fa-certificate"></i> Trusted Quality</li>
-                </ul>
-                <a href="#" class="btn-green">Order Now</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h3>KANWAA</h3>
-                <p>Stay Pure, Stay Fresh!</p>
-                <p>&copy; 2026 Kanwaa Pure Drinking Water. All Rights Reserved.</p>
-            </div>
-            <div class="footer-col">
-                <h4>QUICK LINKS</h4>
-                <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Our Product</li>
-                    <li>Contact Us</li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>CONTACT INFO</h4>
-                <p><i class="fas fa-map-marker-alt"></i> Jhandapur, Bihpur, Bhagalpur - 853201</p>
-                <p><i class="fas fa-phone"></i> 9508810630</p>
-            </div>
-        </div>
-    </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
