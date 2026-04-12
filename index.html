@@ -8,16 +8,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-body{margin:0;font-family:'Poppins';background:#f4f9ff;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
-/* TOP BAR */
-.topbar{
-background:#0a4ea1;
-color:white;
-padding:8px 20px;
-display:flex;
-justify-content:space-between;
-font-size:14px;
+body{
+background:linear-gradient(135deg,#e6f2ff,#ffffff);
+color:#222;
+overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -26,56 +22,73 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 40px;
-background:white;
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:1000;
 }
+
 nav img{height:45px;}
-nav a{margin:0 15px;text-decoration:none;color:#333;}
+
+nav a{
+margin:0 15px;
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
 .btn{
 background:#0a4ea1;
 color:white;
 padding:10px 20px;
 border-radius:25px;
 text-decoration:none;
+transition:0.3s;
 }
+.btn:hover{transform:scale(1.05);}
 
 /* HERO */
 .hero{
 display:flex;
-align-items:center;
 justify-content:space-between;
-padding:60px 40px;
-background:linear-gradient(to right,#e6f2ff,#ffffff);
+align-items:center;
+padding:80px 40px;
+flex-wrap:wrap;
 }
 
 .hero-text{
 max-width:500px;
+animation:fadeUp 1s ease;
 }
 
 .hero h1{
-font-size:48px;
+font-size:50px;
 }
-.hero h1 span{color:#0a4ea1;}
+.hero span{color:#0a4ea1;}
 
-.hero p{margin-top:10px;}
-
-.hero img{
-width:320px;
+.hero-bottle{
+width:360px;
+animation:float 3s ease-in-out infinite;
+filter:drop-shadow(0 25px 40px rgba(0,0,0,0.2));
 }
 
-/* FEATURES */
+/* FEATURES GLASS */
 .features{
 display:flex;
 justify-content:space-around;
-background:white;
+margin:30px;
 padding:20px;
-margin-top:-40px;
 border-radius:20px;
+background:rgba(255,255,255,0.5);
+backdrop-filter:blur(10px);
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
+flex-wrap:wrap;
 }
 
 /* SECTION */
 .section{
-padding:60px 20px;
+padding:70px 20px;
 text-align:center;
 }
 
@@ -84,17 +97,23 @@ text-align:center;
 display:flex;
 justify-content:center;
 align-items:center;
-gap:50px;
+gap:60px;
 flex-wrap:wrap;
 }
 
-.product img{width:220px;}
+.product-bottle{
+width:200px;
+}
 
 .box{
 background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+.box:hover{
+transform:translateY(-10px);
 }
 
 /* PROCESS */
@@ -105,9 +124,35 @@ justify-content:center;
 }
 .process div{
 margin:10px;
+padding:15px 20px;
+border-radius:30px;
+background:#0a4ea1;
+color:white;
+}
+
+/* FLOAT WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
 padding:15px;
-background:#e6f2ff;
-border-radius:10px;
+border-radius:50%;
+font-size:20px;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ANIMATION */
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
 }
 
 /* FOOTER */
@@ -122,72 +167,51 @@ text-align:center;
 
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-<div>📍 Jhandapur, Bhagalpur</div>
-<div>📞 9508810630</div>
-</div>
-
-<!-- NAVBAR -->
 <nav>
 <img src="logo.png">
 <div>
 <a href="#">Home</a>
-<a href="#about">About</a>
 <a href="#product">Product</a>
 <a href="#contact">Contact</a>
-<a class="btn" href="https://wa.me/919508810630">Order Now</a>
+<a class="btn" href="https://wa.me/919508810630">Order</a>
 </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
 <div class="hero-text">
 <h1>Stay Pure <br><span>Stay Fresh</span></h1>
-<p>Safe & Mineral Balanced Drinking Water</p>
-<a class="btn" href="https://wa.me/919508810630">Order on WhatsApp</a>
+<p>Safe & Premium Drinking Water</p>
+<a class="btn" href="https://wa.me/919508810630">Order Now</a>
 </div>
 
-<img src="bottle.png">
+<img src="bottle.png" class="hero-bottle">
 </section>
 
-<!-- FEATURES -->
 <div class="features">
 <div>💧 100% Pure</div>
 <div>⚙ RO + UV + Ozone</div>
 <div>🧊 Mineral Balanced</div>
-<div>📍 Bhagalpur</div>
+<div>🚀 Fast Delivery</div>
 </div>
 
-<!-- ABOUT -->
-<section id="about" class="section">
-<h2>Purity You Can Trust</h2>
-<p>We deliver safe, hygienic and mineral-balanced drinking water.</p>
-</section>
-
-<!-- PRODUCT -->
 <section id="product" class="section">
-<h2>1 Litre Pack</h2>
+<h2>Our Product</h2>
 
 <div class="product">
-<img src="bottle.png">
+<img src="bottle.png" class="product-bottle">
 
 <div class="box">
-<p>✔ 100% Pure</p>
-<p>✔ Healthy & Refreshing</p>
-<p>✔ Trusted Quality</p>
+<p>✔ Premium Quality</p>
+<p>✔ Safe & Hygienic</p>
+<p>✔ Best Taste</p>
 <a class="btn" href="https://wa.me/919508810630">Order Now</a>
 </div>
 </div>
 </section>
 
-<!-- PROCESS -->
 <section class="section">
 <h2>Purification Process</h2>
 <div class="process">
-<div>Raw Water</div>
-<div>Sand Filter</div>
-<div>Carbon</div>
 <div>RO</div>
 <div>UV</div>
 <div>Ozone</div>
@@ -195,12 +219,13 @@ text-align:center;
 </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="section">
 <h2>Contact</h2>
-<p>📍 Jhandapur, Bhagalpur</p>
+<p>📍 Bhagalpur, Bihar</p>
 <p>📞 9508810630</p>
 </section>
+
+<a class="whatsapp" href="https://wa.me/919508810630">💬</a>
 
 <footer>
 © 2026 Kanwaa Pure Drinking Water
