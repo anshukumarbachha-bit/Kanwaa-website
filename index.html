@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanwaa | Pure Mineral Water</title>
+    <title>Kanwaa | Pure Mineral Water - Bhagalpur, Purnea, Khagaria</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -12,11 +12,12 @@
 
     <nav class="navbar">
         <div class="logo">
-            <img src="logo.png" alt="Kanwaa">
+            <img src="logo.png" alt="Kanwaa Logo">
             <span>KANWAA</span>
         </div>
         <div class="nav-links">
             <a href="#hero">Home</a>
+            <a href="#about">Our Story</a>
             <a href="#can-section">20L Premium</a>
             <a href="#bottle-section">Retail Packs</a>
         </div>
@@ -27,28 +28,55 @@
         <div class="hero-content">
             <h2 class="reveal">Pure. Fresh. Local.</h2>
             <h1 class="reveal">Next Generation <br><span>Hydration.</span></h1>
-            <p class="reveal">Advanced RO + UV + Ozone technology delivering the gold standard of water to Bhagalpur.</p>
+            <p class="reveal">Advanced RO + UV + Ozone technology delivering the gold standard of water to your doorstep.</p>
             <div class="hero-btns reveal">
                 <a href="#can-section" class="btn-main">Explore Products</a>
             </div>
         </div>
         <div class="hero-visual">
-            <img src="bottle.png" class="floating" alt="Bottle">
+            <img src="bottle.png" class="floating" alt="Premium Water Bottle">
+        </div>
+    </section>
+
+    <section class="delivery-checker">
+        <div class="checker-card">
+            <h3>Check Delivery Availability</h3>
+            <p>Enter your area pincode to see if we deliver to your doorstep.</p>
+            <div class="input-group">
+                <input type="text" id="pincodeInput" placeholder="Enter 6-digit Pincode">
+                <button onclick="checkPincode()">Check Availability</button>
+            </div>
+            <p id="pincodeResult" class="status-msg"></p>
+        </div>
+    </section>
+
+    <section id="about" class="about-brand">
+        <div class="about-container">
+            <div class="about-text">
+                <span>Our Journey</span>
+                <h2>Redefining Purity in Every Drop</h2>
+                <p>Founded with a mission to provide the highest standard of drinking water, <strong>Kanwaa</strong> has become a symbol of trust and health in Bihar. We recognized the need for safe, mineral-rich hydration accessible to every home.</p>
+                <p>Our facility utilizes global technologies to ensure your water is biologically safe, physically refreshing, and enriched with essential minerals.</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-card"><h4>7+</h4><p>Stages of Filtration</p></div>
+                <div class="stat-card"><h4>100%</h4><p>Ozone Treated</p></div>
+            </div>
         </div>
     </section>
 
     <section id="can-section" class="product-reveal-section">
         <div class="product-container">
             <div class="product-image">
-                <img src="can-20l.png" alt="20L Can">
+                <img src="can-20l.png" alt="20L Premium Can">
             </div>
             <div class="product-info">
                 <span class="premium-tag">DAILY ESSENTIAL</span>
                 <h2>20 Litre Premium Jar</h2>
-                <p>Perfect for homes and offices in Bihpur. Every drop undergoes a 7-stage purification process to ensure your health.</p>
+                <p>Perfect for homes and offices. Every drop undergoes a 7-stage purification process to ensure absolute purity and health.</p>
                 <div class="specs">
-                    <div class="spec-item"><i class="fas fa-check-circle"></i> Monthly Subscription</div>
-                    <div class="spec-item"><i class="fas fa-truck"></i> Free Bihpur Delivery</div>
+                    <div class="spec-item"><i class="fas fa-check-circle"></i> Monthly Subscriptions Available</div>
+                    <div class="spec-item"><i class="fas fa-truck"></i> Free Local Delivery</div>
                 </div>
                 <div class="price-action">
                     <span class="price">₹100</span>
@@ -62,14 +90,38 @@
         </div>
     </section>
 
+    <section class="features-section">
+        <div class="section-title">
+            <span>The Gold Standard</span>
+            <h2>Why Choose Kanwaa?</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="icon-box"><i class="fas fa-microscope"></i></div>
+                <h4>Double Lab Tested</h4>
+                <p>Every batch undergoes 24 rigorous quality checks before leaving our facility.</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon-box"><i class="fas fa-vial"></i></div>
+                <h4>Added Minerals</h4>
+                <p>Enriched with Magnesium and Potassium for a crisp, healthy taste.</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon-box"><i class="fas fa-recycle"></i></div>
+                <h4>Eco-Friendly</h4>
+                <p>We use 100% recyclable materials to ensure a greener planet.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="bottle-section" class="dark-section">
         <div class="section-header">
             <h2>Retail & Events Bulk Pack</h2>
-            <p>Khagaria | Bhagalpur | Purnea</p>
+            <p>Available in Khagaria | Bhagalpur | Purnea</p>
         </div>
         <div class="retail-grid">
             <div class="retail-card">
-                <img src="bottle.png" alt="1L">
+                <img src="bottle.png" alt="1L Bottle">
                 <h3>1 Litre Classic</h3>
                 <p>Bulk Order Only (Min. 50 Boxes)</p>
                 <div class="price-action">
@@ -82,7 +134,7 @@
                 </div>
             </div>
             <div class="retail-card">
-                <img src="bottle-500ml.png" alt="500ml">
+                <img src="bottle-500ml.png" alt="500ml Bottle">
                 <h3>500ml Compact</h3>
                 <p>Bulk Order Only (Min. 50 Boxes)</p>
                 <div class="price-action">
@@ -97,6 +149,37 @@
         </div>
     </section>
 
+    <section class="trust-deep-dive">
+        <div class="content-wrapper">
+            <div class="trust-column">
+                <h3>Our Science-Backed Process</h3>
+                <p>We utilize <strong>Ozonisation</strong>, ensuring that microscopic bacteria are neutralized without chemical aftertaste. Our RO precision level balances TDS perfectly for your body.</p>
+            </div>
+            <div class="trust-column">
+                <h3>Commitment to Hygiene</h3>
+                <p>Our 20L jars go through automated sterilization. With zero human contact from source to seal, we ensure 100% hygiene.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-info">
+                <h3>KANWAA</h3>
+                <p>The purest drinking water service in Bhagalpur Division.</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Narayanpur, Bihar</p>
+                <p><i class="fas fa-phone"></i> +91 95088 10630</p>
+                <p><i class="fas fa-envelope"></i> support@kanwaa.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kanwaa Waters. All Rights Reserved.</p>
+        </div>
+    </footer>
+
     <div id="checkout-bar" class="checkout-bar hide">
         <div class="total-wrap">
             <span>Estimated Total</span>
@@ -110,85 +193,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-<section class="delivery-checker">
-    <div class="checker-card">
-        <h3>Check Delivery Availability</h3>
-        <p>Enter your area pincode to see if we deliver to your doorstep.</p>
-        <div class="input-group">
-            <input type="text" id="pincodeInput" placeholder="Enter 6-digit Pincode">
-            <button onclick="checkPincode()">Check Availability</button>
-        </div>
-        <p id="pincodeResult" class="status-msg"></p>
-    </div>
-</section>
-
-<section class="features-section">
-    <div class="section-title">
-        <span>The Gold Standard</span>
-        <h2>Why Choose Kanwaa?</h2>
-    </div>
-    <div class="features-grid">
-        <div class="feature-item">
-            <div class="icon-box"><i class="fas fa-microscope"></i></div>
-            <h4>Double Lab Tested</h4>
-            <p>Every batch undergoes 24 rigorous quality checks before leaving our facility.</p>
-        </div>
-        <div class="feature-item">
-            <div class="icon-box"><i class="fas fa-vial"></i></div>
-            <h4>Added Minerals</h4>
-            <p>Enriched with the perfect balance of Magnesium and Potassium for a crisp taste.</p>
-        </div>
-        <div class="feature-item">
-            <div class="icon-box"><i class="fas fa-recycle"></i></div>
-            <h4>Eco-Friendly</h4>
-            <p>100% Recyclable PET bottles and reusable 20L jars to protect our planet.</p>
-        </div>
-    </div>
-</section>
-<section class="about-brand">
-    <div class="about-container">
-        <div class="about-text">
-            <span>Our Journey</span>
-            <h2>Redefining Purity in Every Drop</h2>
-            <p>
-                Founded with a mission to provide the highest standard of drinking water, <strong>Kanwaa</strong> has become a symbol of trust and health. We recognized the growing need for safe, mineral-rich hydration that is accessible to every household and workplace. 
-            </p>
-            <p>
-                Our state-of-the-art purification facility utilizes advanced global technologies to ensure that the water you drink is not just "clean," but biologically safe and physically refreshing. At Kanwaa, we believe that pure water is the foundation of a healthy life, and we are committed to delivering that foundation to your doorstep every single day.
-            </p>
-        </div>
-        <div class="about-stats">
-            <div class="stat-card">
-                <h4>7+</h4>
-                <p>Stages of Filtration</p>
-            </div>
-            <div class="stat-card">
-                <h4>100%</h4>
-                <p>Ozone Treated</p>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="trust-deep-dive">
-    <div class="content-wrapper">
-        <div class="trust-column">
-            <h3>Our Science-Backed Process</h3>
-            <p>
-                Most water brands stop at basic filtration. At Kanwaa, we go further. Our water undergoes <strong>Ozonisation</strong>, a process far superior to standard chlorination, ensuring that even the most microscopic bacteria and viruses are neutralized without leaving a chemical aftertaste.
-            </p>
-            <p>
-                We also utilize <strong>Reverse Osmosis (RO)</strong> at a precision level to balance the Total Dissolved Solids (TDS). This ensures the water is light on your digestive system while retaining the essential minerals your body needs to stay hydrated and energetic.
-            </p>
-        </div>
-        
-        <div class="trust-column">
-            <h3>Commitment to Hygiene</h3>
-            <p>
-                Trust is built in the details. Our 20-Litre jars go through a multi-stage automated washing and sterilization process before refilling. We use food-grade, BPA-free materials for all our packaging to ensure that no harmful chemicals leach into your water during storage or transit.
-            </p>
-            <p>
-                From the moment the water is sourced to the final seal on the bottle, there is zero human contact. This "Hands-Free" philosophy is what makes Kanwaa the gold standard for families and corporate offices alike.
-            </p>
-        </div>
-    </div>
-</section>
