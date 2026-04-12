@@ -10,32 +10,34 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
-body{
-background: linear-gradient(135deg,#00AEEF,#00C851);
-color:#333;
-}
+body{background:#f4f9ff;}
 
 /* NAVBAR */
 nav{
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:15px 30px;
-background:rgba(255,255,255,0.2);
-backdrop-filter:blur(10px);
-position:sticky;
-top:0;
+background:white;
+box-shadow:0 2px 15px rgba(0,0,0,0.1);
 }
-nav h2{color:white;}
-nav a{color:white;margin:0 10px;text-decoration:none;}
+nav img{height:40px;}
+nav a{margin:0 10px;text-decoration:none;color:black;font-weight:500;}
 
 /* HERO */
 .hero{
-text-align:center;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:60px 30px;
+background:linear-gradient(135deg,#00AEEF,#00C851);
 color:white;
-padding:100px 20px;
+flex-wrap:wrap;
 }
-.hero h1{font-size:45px;}
-.hero p{margin-top:10px;font-size:18px;}
+.hero-text{max-width:500px;}
+.hero h1{font-size:42px;}
+.hero p{margin-top:10px;}
+
 .btn{
 background:white;
 color:#00AEEF;
@@ -44,31 +46,58 @@ border-radius:30px;
 text-decoration:none;
 display:inline-block;
 margin-top:20px;
+font-weight:600;
+}
+
+.hero img{
+width:260px;
+animation:float 3s infinite;
+}
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
 }
 
 /* SECTION */
 .section{
 padding:60px 20px;
-background:white;
-margin:20px;
-border-radius:20px;
-box-shadow:0 10px 40px rgba(0,0,0,0.1);
 text-align:center;
 }
 
-/* CARDS */
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
 .card{
-margin:15px;
+background:white;
 padding:20px;
-background:#f8f8f8;
-border-radius:15px;
+margin:10px;
+border-radius:12px;
+width:250px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
 
 /* PROCESS */
 .process{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:15px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+.process div{
+background:#e3f2fd;
+padding:15px;
+margin:5px;
+border-radius:8px;
+}
+
+/* FOOTER */
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:20px;
 }
 
 /* WHATSAPP */
@@ -80,15 +109,8 @@ background:#25D366;
 color:white;
 padding:15px;
 border-radius:50%;
-text-decoration:none;
 font-size:22px;
-}
-
-/* FOOTER */
-footer{
-text-align:center;
-color:white;
-padding:20px;
+text-decoration:none;
 }
 </style>
 </head>
@@ -97,7 +119,7 @@ padding:20px;
 
 <!-- NAVBAR -->
 <nav>
-<h2>Kanwaa 💧</h2>
+<img src="logo.png">
 <div>
 <a href="#">Home</a>
 <a href="#about">About</a>
@@ -108,15 +130,29 @@ padding:20px;
 
 <!-- HERO -->
 <div class="hero">
+<div class="hero-text">
 <h1>Stay Pure, Stay Fresh 💧</h1>
-<p>Premium Drinking Water from Bhagalpur</p>
-<a class="btn" href="https://wa.me/919508810630">Order on WhatsApp</a>
+<p>Safe, Hygienic & Mineral Water from Bhagalpur</p>
+<a class="btn" href="https://wa.me/919508810630?text=Hello%20Kanwaa,%20I%20want%20to%20order">Order Now</a>
+</div>
+
+<img src="https://cdn-icons-png.flaticon.com/512/728/728093.png">
 </div>
 
 <!-- ABOUT -->
 <div id="about" class="section">
 <h2>About Us</h2>
-<p>Kanwaa provides safe, hygienic and mineral-balanced water using RO, UV & Ozone technology.</p>
+<p>Kanwaa Pure Drinking Water delivers safe and purified water using RO, UV & Ozone technology.</p>
+</div>
+
+<!-- FEATURES -->
+<div class="section">
+<h2>Why Choose Us</h2>
+<div class="cards">
+<div class="card">100% Pure Water</div>
+<div class="card">10,000 Bottles/Day</div>
+<div class="card">Advanced RO+UV+Ozone</div>
+</div>
 </div>
 
 <!-- PRODUCT -->
@@ -124,7 +160,7 @@ padding:20px;
 <h2>Our Product</h2>
 <div class="card">
 <h3>1 Litre Bottle</h3>
-<p>100% Pure • Safe • Hygienic</p>
+<p>Safe • Pure • Hygienic</p>
 <p>Price: Coming Soon</p>
 </div>
 </div>
@@ -133,20 +169,20 @@ padding:20px;
 <div class="section">
 <h2>Purification Process</h2>
 <div class="process">
-<div class="card">Raw Water</div>
-<div class="card">Sand Filter</div>
-<div class="card">Carbon Filter</div>
-<div class="card">RO</div>
-<div class="card">UV</div>
-<div class="card">Ozone</div>
-<div class="card">Minerals</div>
+<div>Raw Water</div>
+<div>Sand Filter</div>
+<div>Carbon Filter</div>
+<div>RO</div>
+<div>UV</div>
+<div>Ozone</div>
+<div>Minerals</div>
 </div>
 </div>
 
 <!-- BUSINESS -->
 <div class="section">
-<h2>Business Opportunity</h2>
-<p>Become a Distributor or Retailer of Kanwaa Water</p>
+<h2>Become Distributor</h2>
+<p>Start your business with Kanwaa Water</p>
 <a class="btn" href="https://wa.me/919508810630">Join Now</a>
 </div>
 
