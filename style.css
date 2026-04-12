@@ -1,130 +1,83 @@
-/* --- Root Variables & Reset --- */
 :root {
     --primary: #0076CE;
     --dark: #0a0a0a;
-    --light: #f5f5f7;
-    --accent: #2ECC71;
-    --text-main: #2C3E50;
-    --text-muted: #7F8C8D;
-    --glass: rgba(255, 255, 255, 0.95);
+    --light: #ffffff;
+    --bg-soft: #f4f7fa;
+    --text: #2C3E50;
+    --accent: #27AE60;
 }
 
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-    font-family: 'Poppins', sans-serif; 
-    scroll-behavior: smooth; 
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body { background: var(--bg-soft); color: var(--text); overflow-x: hidden; width: 100%; }
 
-body { 
-    background: var(--light); 
-    color: var(--dark); 
-    overflow-x: hidden; /* Yeh screen se bahar jane se rokta hai */
-    width: 100%;
-    line-height: 1.6;
-}
-
-/* --- Navigation Fix --- */
+/* Navbar */
 .navbar {
-    position: fixed; width: 100%; top: 0; padding: 10px 5%;
+    position: fixed; top: 0; width: 100%; padding: 10px 5%;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);
     display: flex; justify-content: space-between; align-items: center;
-    background: var(--glass); 
-    backdrop-filter: blur(20px); 
-    z-index: 1000;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    z-index: 2000; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
-.logo { display: flex; flex-direction: column; }
-.logo span { font-weight: 800; font-size: 1.4rem; color: var(--primary); line-height: 1; }
-.logo .tagline { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-main); }
-.logo img { height: 40px; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo img { height: 45px; }
+.brand-text { display: flex; flex-direction: column; }
+.main-name { font-weight: 800; font-size: 1.3rem; color: var(--primary); line-height: 1; }
+.tagline { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: #555; }
+.nav-links { display: none; }
 
-.nav-links { display: none; } /* Mobile par links chhupa diye taaki clutter na ho */
-
-.nav-cta { background: var(--primary); color: white; padding: 8px 15px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 0.8rem; }
-
-/* --- Hero Section Fix --- */
+/* Hero */
 .hero-section {
-    min-height: 100vh; display: flex; align-items: center; padding: 100px 5% 50px;
-    background: radial-gradient(circle at 75%, #e0f2fe 0%, #f5f5f7 100%);
-    flex-wrap: wrap;
+    padding: 120px 5% 60px; min-height: 90vh;
+    background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 100%);
+    display: flex; flex-direction: column; align-items: center; text-align: center;
 }
-.hero-content h1 { font-size: 2.8rem; line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
+.hero-content h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; }
 .hero-content h1 span { color: var(--primary); }
-.hero-content p { font-size: 1rem; color: var(--text-muted); margin-bottom: 30px; }
+.hero-content p { font-size: 1rem; color: #666; max-width: 600px; margin-bottom: 30px; }
+.hero-visual img { max-width: 250px; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1)); }
 
-.hero-visual { width: 100%; text-align: center; margin-top: 30px; }
-.hero-visual img { max-width: 80%; height: auto; }
+/* Buttons */
+.btn-main { background: var(--primary); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; }
 
-/* --- Delivery Checker Responsive --- */
-.delivery-checker { padding: 40px 5%; margin-top: -30px; }
-.checker-card { background: #ffffff; padding: 30px 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; }
-.input-group { width: 100%; max-width: 100%; margin: 20px auto; display: flex; flex-direction: column; gap: 10px; background: transparent; border: none; }
-.input-group input { border: 1px solid #ddd; padding: 15px; border-radius: 50px; text-align: center; background: #fff; }
-.input-group button { background: var(--primary); color: white; border: none; padding: 15px; border-radius: 50px; font-weight: 600; }
+/* Cards & Grid */
+.delivery-checker { padding: 40px 5%; margin-top: -50px; }
+.checker-card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); text-align: center; }
+.input-group { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+.input-group input { padding: 15px; border-radius: 50px; border: 1px solid #ddd; text-align: center; }
+.input-group button { background: var(--dark); color: white; border: none; padding: 15px; border-radius: 50px; font-weight: bold; }
 
-/* --- About & Stats Fix --- */
-.about-brand { padding: 60px 5%; background: #fff; flex-direction: column; text-align: center; }
-.about-text h2 { font-size: 2rem; margin-bottom: 20px; }
-.about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; margin-top: 30px; }
-.stat-card { background: var(--primary); color: white; padding: 20px; border-radius: 15px; min-width: unset; }
-.stat-card h4 { font-size: 1.5rem; }
+.product-grid { display: grid; grid-template-columns: 1fr; gap: 25px; padding: 40px 5%; }
+.p-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #eee; text-align: center; padding: 20px; }
+.p-img img { height: 180px; object-fit: contain; margin-bottom: 15px; }
+.p-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; background: #f9f9f9; padding: 10px; border-radius: 10px; }
+.price { font-weight: 800; font-size: 1.2rem; color: var(--primary); }
+.price small { font-size: 0.7rem; color: #777; }
 
-/* --- Product Section Fix --- */
-.product-reveal-section { padding: 60px 5%; }
-.product-container { flex-direction: column; text-align: center; gap: 40px; }
-.product-image img { height: auto; max-width: 250px; }
-.product-info h2 { font-size: 2.2rem; }
+/* Qty Control */
+.qty-control { display: flex; align-items: center; gap: 15px; }
+.qty-control button { width: 30px; height: 30px; border-radius: 50%; border: none; background: var(--primary); color: white; cursor: pointer; }
+.qty-control span { font-weight: bold; width: 25px; }
 
-/* --- Features Grid Fix --- */
-.features-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-.feature-item { padding: 30px 20px; border-radius: 20px; }
-
-/* --- Dark Retail Section (Box Pricing Update) --- */
-.dark-section { background: var(--dark); color: white; padding: 60px 5%; }
-.retail-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
-.retail-card { background: #1c1c1e; padding: 40px 20px; border-radius: 30px; border: 1px solid #2c2c2e; }
-.retail-card img { height: 200px; }
-.retail-card h3 { margin-bottom: 10px; }
-.retail-card p { font-size: 0.9rem; color: #aaa; margin-bottom: 15px; }
-
-/* Pricing UI */
-.price-action { flex-direction: column; gap: 15px; }
-.price { font-size: 1.8rem; }
-.price::after { content: ' / Box'; font-size: 0.9rem; color: #7F8C8D; font-weight: 400; }
-.qty { background: rgba(255,255,255,0.1); padding: 5px; }
-
-/* --- Checkout Bar Responsive --- */
+/* Checkout Bar */
 .checkout-bar {
-    position: fixed; bottom: 10px; left: 5%; right: 5%;
-    width: 90%; transform: none; padding: 15px 20px;
-    border-radius: 15px; flex-direction: row; justify-content: space-between;
+    position: fixed; bottom: 0; left: 0; width: 100%;
+    background: var(--dark); color: white; padding: 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    z-index: 3000; box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
 }
-.checkout-bar.hide { bottom: -100px; }
-.total-wrap h3 { font-size: 1.4rem; }
-.btn-final { padding: 12px 20px; font-size: 0.9rem; }
+.checkout-bar.hide { display: none; }
+.btn-final { background: var(--accent); color: white; border: none; padding: 12px 20px; border-radius: 10px; font-weight: bold; cursor: pointer; }
 
-/* --- Footer Fix --- */
-.main-footer { padding: 40px 5%; text-align: center; }
-.footer-grid { grid-template-columns: 1fr; gap: 40px; }
-.footer-contact p { justify-content: center; }
-
-/* --- Animations --- */
-.reveal, .feature-item, .retail-card { opacity: 0; transform: translateY(20px); transition: 0.6s ease-out; }
-.active { opacity: 1; transform: translateY(0); }
-
-/* --- Desktop Styles (Bade screens ke liye) --- */
+/* Responsive Desktop */
 @media (min-width: 768px) {
-    .nav-links { display: block; }
+    .nav-links { display: flex; gap: 20px; }
+    .hero-section { flex-direction: row; text-align: left; padding: 150px 10%; }
     .hero-content h1 { font-size: 4rem; }
-    .hero-visual { width: 45%; }
-    .hero-section { flex-wrap: nowrap; padding: 0 10%; }
-    .hero-content { width: 55%; }
-    .features-grid { grid-template-columns: repeat(3, 1fr); }
-    .retail-grid { grid-template-columns: 1fr 1fr; }
-    .input-group { flex-direction: row; background: #f9f9f9; border: 1px solid #eee; border-radius: 100px; }
-    .input-group button { width: auto; }
-    .about-brand { flex-direction: row; text-align: left; }
-    .about-stats { width: auto; }
-    .price-action { flex-direction: row; }
+    .product-grid { grid-template-columns: repeat(3, 1fr); padding: 60px 10%; }
+    .input-group { flex-direction: row; max-width: 500px; margin: 20px auto; background: #eee; border-radius: 50px; padding: 5px; }
+    .input-group input { border: none; background: transparent; flex: 1; }
+    .input-group button { width: auto; padding: 10px 30px; }
 }
+
+/* Scroll Animation */
+.reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
