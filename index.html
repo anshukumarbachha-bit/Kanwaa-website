@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KANWAA | Redefining Purity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #007bff;
+            --dark: #1d2d35;
+            --light-bg: #f8fbff;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--white); color: var(--dark); line-height: 1.6; }
+
+        /* Navigation */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 5%; background: var(--white);
+            position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .logo { font-size: 24px; font-weight: 900; color: var(--primary); letter-spacing: 1px; }
+        .nav-links a { text-decoration: none; color: var(--dark); margin-left: 20px; font-weight: 500; font-size: 14px; }
+
+        /* Hero Section */
+        .hero { text-align: center; padding: 80px 5% 40px; background: linear-gradient(180deg, #eef7ff 0%, #ffffff 100%); }
+        .hero h1 { font-size: 42px; font-weight: 800; margin-bottom: 15px; color: var(--dark); }
+        .hero p { font-size: 18px; color: #555; max-width: 600px; margin: 0 auto 30px; }
+
+        /* Pincode Checker */
+        .check-box {
+            background: var(--white); padding: 25px; border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,123,255,0.1); max-width: 450px; margin: 0 auto;
+        }
+        .check-box input {
+            padding: 12px; width: 60%; border: 1px solid #ddd; border-radius: 8px; outline: none;
+        }
+        .check-btn {
+            padding: 12px 20px; background: var(--primary); color: white; 
+            border: none; border-radius: 8px; cursor: pointer; font-weight: bold;
+        }
+
+        /* Trust Section */
+        .trust-section { padding: 60px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .trust-card { padding: 30px; text-align: center; background: var(--light-bg); border-radius: 15px; }
+        .trust-card i { font-size: 40px; color: var(--primary); margin-bottom: 15px; }
+        .trust-card h3 { margin-bottom: 10px; font-size: 18px; }
+
+        /* Product Section */
+        .products { padding: 60px 5%; background: var(--white); }
+        .section-title { text-align: center; margin-bottom: 40px; font-size: 28px; font-weight: 800; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .p-card { 
+            background: var(--white); border: 1px solid #eee; border-radius: 20px; 
+            padding: 20px; text-align: center; transition: 0.3s;
+        }
+        .p-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
+        .p-card img { height: 200px; object-fit: contain; margin-bottom: 15px; }
+        .price { font-size: 24px; font-weight: 800; color: var(--primary); margin: 10px 0; }
+        
+        /* Footer */
+        footer { background: var(--dark); color: white; padding: 50px 5%; text-align: center; }
+        .footer-logo { font-size: 24px; font-weight: 900; margin-bottom: 20px; color: var(--primary); }
+        .contact-info { margin-bottom: 20px; opacity: 0.8; font-size: 14px; }
+
+        /* Order Floating Bar */
+        .order-bar {
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            width: 90%; max-width: 500px; background: #222; color: white;
+            padding: 15px 25px; border-radius: 50px; display: flex;
+            justify-content: space-between; align-items: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: none; /* Hidden by default */
+        }
+        .place-order-btn {
+            background: #25d366; color: white; border: none; padding: 10px 20px;
+            border-radius: 30px; font-weight: bold; cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 30px; }
+            .check-box input { width: 100%; margin-bottom: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">KANWAA</div>
+        <div class="nav-links">
+            <a href="#trust">Hamara Bharosa</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <p style="color:var(--primary); font-weight:bold; text-transform:uppercase; letter-spacing:2px;">Our Journey</p>
+        <h1>Redefining Purity<br>In Every Drop</h1>
+        <p>Bhagalpur Division ka sabse shuddh pani, jo har bottle mein safety aur minerals ki guarantee deta hai.</p>
+        
+        <div class="check-box">
+            <h4 style="margin-bottom:15px;">Delivery Availability Check Karein</h4>
+            <input type="text" id="pincode" placeholder="Pincode daalein (853201)">
+            <button class="check-btn" onclick="checkPincode()">Check Area</button>
+            <p id="msg" style="margin-top:10px; font-size:13px; font-weight:bold;"></p>
+        </div>
+    </section>
+
+    <section class="trust-section" id="trust">
+        <div class="trust-card">
+            <i class="fas fa-microscope"></i>
+            <h3>Double Lab Tested</h3>
+            <p>Har batch 24 quality checks se guzarta hai.</p>
+        </div>
+        <div class="trust-card">
+            <i class="fas fa-flask"></i>
+            <h3>Added Minerals</h3>
+            <p>Magnesium aur Potassium se bhara crisp taste.</p>
+        </div>
+        <div class="trust-card">
+            <i class="fas fa-leaf"></i>
+            <h3>Eco-Friendly</h3>
+            <p>100% recyclable material ka upyog.</p>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <h2 class="section-title">Hamare Packs Choose Karein</h2>
+        <div class="product-grid">
+            <div class="p-card">
+                <img src="https://via.placeholder.com/150?text=20L+Jar" alt="20L">
+                <h3>20 Litre Premium Jar</h3>
+                <p>Office aur Ghar ke liye best</p>
+                <div class="price">₹100/Jar</div>
+                <button class="check-btn" onclick="addToCart('20L Jar', 100)">Order Karein</button>
+            </div>
+            <div class="p-card">
+                <img src="https://via.placeholder.com/150?text=1L+Bottle" alt="1L">
+                <h3>1 Litre Classic Box</h3>
+                <p>Bulk Order Only (Min 50 Box)</p>
+                <div class="price">₹120/Box</div>
+                <button class="check-btn" onclick="addToCart('1L Box', 120)">Order Karein</button>
+            </div>
+            <div class="p-card">
+                <img src="https://via.placeholder.com/150?text=500ml+Bottle" alt="500ml">
+                <h3>500ml Compact Box</h3>
+                <p>Event Pack (Min 50 Box)</p>
+                <div class="price">₹90/Box</div>
+                <button class="check-btn" onclick="addToCart('500ml Box', 90)">Order Karein</button>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-logo">KANWAA</div>
+        <p style="margin-bottom:20px;">Defining the gold standard of mineral water.</p>
+        <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> Narayanpur, Bihar</p>
+            <p><i class="fas fa-phone"></i> +91 95088 10630</p>
+            <p><i class="fas fa-envelope"></i> support@kanwaa.com</p>
+        </div>
+        <p style="font-size:12px; opacity:0.5;">© 2026 Kanwaa Waters. All Rights Reserved.</p>
+    </footer>
+
+    <div class="order-bar" id="orderBar">
+        <div>
+            <span id="cartCount">1 Item</span> Selected<br>
+            <b id="totalPrice">Total: ₹100</b>
+        </div>
+        <button class="place-order-btn" onclick="finalOrder()">Place Order <i class="fab fa-whatsapp"></i></button>
+    </div>
+
+    <script>
+        function checkPincode() {
+            const pin = document.getElementById('pincode').value;
+            const msg = document.getElementById('msg');
+            const available = ["853201", "853204", "812001"]; // Apne pincodes yahan daalein
+            
+            if(available.includes(pin)) {
+                msg.style.color = "green";
+                msg.innerHTML = "✓ Service Available in " + pin + "!";
+            } else {
+                msg.style.color = "red";
+                msg.innerHTML = "× Sorry, abhi hum yahan nahi pahunche.";
+            }
+        }
+
+        let cart = { item: '', price: 0 };
+
+        function addToCart(name, price) {
+            cart.item = name;
+            cart.price = price;
+            document.getElementById('orderBar').style.display = 'flex';
+            document.getElementById('cartCount').innerText = name;
+            document.getElementById('totalPrice').innerText = "Price: ₹" + price;
+        }
+
+        function finalOrder() {
+            const text = `Namaste Kanwaa! Mujhe order place karna hai: \nProduct: ${cart.item}\nPrice: ₹${cart.price}\nKripya details bhejein.`;
+            window.open(`https://wa.me/919508810630?text=${encodeURIComponent(text)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
