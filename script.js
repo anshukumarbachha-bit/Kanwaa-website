@@ -74,3 +74,23 @@ function sendToWhatsApp() {
     let whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 }
+const serviceAreas = ["853204", "812001", "812002", "854301"]; // Example ZIP codes
+
+function checkPincode() {
+    const input = document.getElementById('pincodeInput').value.trim();
+    const result = document.getElementById('pincodeResult');
+    
+    if (input.length !== 6 || isNaN(input)) {
+        result.innerText = "Please enter a valid 6-digit pincode.";
+        result.style.color = "#E74C3C";
+        return;
+    }
+
+    if (serviceAreas.includes(input)) {
+        result.innerHTML = `<i class="fas fa-check-circle"></i> Service is available in your area!`;
+        result.style.color = "#27AE60";
+    } else {
+        result.innerHTML = `<i class="fas fa-times-circle"></i> Currently, we do not deliver to this area.`;
+        result.style.color = "#E74C3C";
+    }
+}
