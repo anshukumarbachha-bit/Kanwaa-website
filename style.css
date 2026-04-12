@@ -1,0 +1,51 @@
+:root {
+    --bisleri-blue: #00b0ff;
+    --navy: #002d5b;
+    --light-bg: #f5faff;
+    --text: #333;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { background: #fff; color: var(--text); overflow-x: hidden; }
+
+/* Desktop Navigation Tabs */
+.nav-container {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 8%; background: white; border-bottom: 1px solid #eee;
+    position: sticky; top: 0; z-index: 1000;
+}
+.brand-logo { font-size: 26px; font-weight: 900; color: var(--bisleri-blue); }
+.tabs { display: flex; gap: 30px; }
+.tabs a { 
+    text-decoration: none; color: var(--navy); font-weight: 600; 
+    font-size: 14px; text-transform: uppercase; transition: 0.3s;
+}
+.tabs a:hover, .tabs a.active { color: var(--bisleri-blue); border-bottom: 2px solid var(--bisleri-blue); }
+
+/* Hero Branding */
+.hero {
+    height: 70vh; background: linear-gradient(rgba(0,176,255,0.05), #fff);
+    display: flex; align-items: center; justify-content: center; text-align: center;
+}
+.hero h1 { font-size: 50px; color: var(--navy); font-weight: 800; line-height: 1.2; }
+.hero span { color: var(--bisleri-blue); }
+
+/* Card Layouts */
+.container { max-width: 1100px; margin: auto; padding: 60px 20px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.purity-card { 
+    padding: 30px; text-align: center; background: var(--light-bg); 
+    border-radius: 20px; border: 1px solid transparent; transition: 0.3s;
+}
+.purity-card:hover { border-color: var(--bisleri-blue); background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+
+/* Product Display */
+.p-item { text-align: center; padding: 40px; border: 1px solid #eee; border-radius: 15px; }
+.p-item img { height: 250px; margin-bottom: 20px; }
+.buy-btn { 
+    background: var(--bisleri-blue); color: white; border: none; 
+    padding: 12px 30px; border-radius: 50px; font-weight: bold; cursor: pointer;
+}
+
+/* Footer */
+footer { background: var(--navy); color: white; padding: 40px 8%; margin-top: 50px; }
