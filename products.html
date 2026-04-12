@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Store | KANWAA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="nav-bar"><div class="brand-name">KANWAA</div><div class="nav-tabs"><a href="index.html">Home</a><a href="products.html" class="active">Store</a></div></nav>
+
+    <section class="full-section">
+        <div class="product-shelf reveal">
+            <div class="product-unit">
+                <img src="bottle-500.png" alt="500ml">
+                <h3>Elite 500ml (Box of 24)</h3>
+                <div class="price-display">₹90</div>
+                <button class="btn-gold" onclick="openTerminal('500ml Box')">Order</button>
+            </div>
+            <div class="product-unit">
+                <img src="bottle-1l.png" alt="1L">
+                <h3>Classic 1L (Box of 12)</h3>
+                <div class="price-display">₹120</div>
+                <button class="btn-gold" onclick="openTerminal('1L Box')">Order</button>
+            </div>
+            <div class="product-unit">
+                <img src="bottle-2l.png" alt="2L">
+                <h3>Grand 2L (Box of 9)</h3>
+                <div class="price-display">₹230</div>
+                <button class="btn-gold" onclick="openTerminal('2L Box')">Order</button>
+            </div>
+            <div class="product-unit">
+                <img src="can-20l.png" alt="20L">
+                <h3>Corporate 20L Can</h3>
+                <div class="price-display">₹100</div>
+                <button class="btn-gold" onclick="openTerminal('20L Can')">Order</button>
+            </div>
+        </div>
+
+        <div id="orderTerminal" class="checkout-panel reveal" style="display:none; margin-top: 100px;">
+            <h2 id="orderTitle" style="margin-bottom: 20px; color: var(--primary);"></h2>
+            <input type="text" id="custName" placeholder="Client Name">
+            <input type="tel" id="custPhone" placeholder="Contact Details">
+            <textarea id="custAddr" placeholder="Delivery Terminal Address"></textarea>
+            <input type="number" id="custQty" placeholder="Quantity (Min 50 Boxes)">
+            <button class="btn-gold" style="width: 100%;" onclick="executeOrder()">PLACE SYSTEM ORDER</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
