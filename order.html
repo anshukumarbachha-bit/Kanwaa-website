@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Place Order | KANWAA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="brand-logo">KANWAA</div>
+        <div class="tabs"><a href="index.html">Home</a><a href="story.html">Story</a><a href="products.html">Products</a><a href="order.html" class="active">Order</a></div>
+    </nav>
+
+    <div class="container" style="max-width: 500px;">
+        <div style="background: #f9f9f9; padding: 40px; border-radius: 20px;">
+            <h2 style="margin-bottom:20px;">Order Terminal</h2>
+            <input type="text" id="name" placeholder="Apka Naam" style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:8px;">
+            <input type="tel" id="phone" placeholder="Mobile Number" style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:8px;">
+            <select id="prod" style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:8px;">
+                <option>20L Premium Jar</option>
+                <option>1L Classic Box</option>
+                <option>500ml Compact Box</option>
+            </select>
+            <input type="number" id="qty" placeholder="Quantity (Min. 50)" style="width:100%; padding:12px; margin-bottom:20px; border:1px solid #ddd; border-radius:8px;">
+            <button onclick="sendOrder()" class="buy-btn" style="width:100%;">Place Order Now</button>
+        </div>
+    </div>
+
+    <script>
+        function sendOrder() {
+            const n = document.getElementById('name').value;
+            const ph = document.getElementById('phone').value;
+            const p = document.getElementById('prod').value;
+            const q = document.getElementById('qty').value;
+            
+            if(!n || !ph || !q) { alert("Details fill karein."); return; }
+            
+            const msg = `🚀 *OFFICIAL ORDER*\nClient: ${n}\nContact: ${ph}\nProduct: ${p}\nQty: ${q}`;
+            window.open(`https://wa.me/919508810630?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
