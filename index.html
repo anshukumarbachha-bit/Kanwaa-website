@@ -3,86 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanwaa - Pure Drinking Water</title>
+    <title>Kanwaa | Pure Mineral Water</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="logo.png" alt="Kanwaa Logo">
-                <div class="logo-text"><strong>KANWAA</strong><br><small>PURE DRINKING WATER</small></div>
-            </div>
-            <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#delivery">Delivery Areas</a></li>
-            </ul>
-            <a href="https://wa.me/919508810630" class="btn-whatsapp-nav"><i class="fab fa-whatsapp"></i> Chat with Us</a>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Kanwaa">
+            <span>KANWAA</span>
+        </div>
+        <div class="nav-links">
+            <a href="#hero">Home</a>
+            <a href="#can-section">20L Premium</a>
+            <a href="#bottle-section">Retail Packs</a>
+        </div>
+        <a href="https://wa.me/919508810630" class="nav-cta">Order Now</a>
+    </nav>
 
-    <section class="hero">
+    <section id="hero" class="hero-section">
         <div class="hero-content">
-            <span class="badge"><i class="fas fa-tint"></i> 100% PURE & SAFE</span>
-            <h1>STAY PURE<br>STAY FRESH</h1>
-            <p>Bihar's Trusted Mineral Water. Now delivering in Bihpur, Khagaria, Bhagalpur & Purnea.</p>
+            <h2 class="reveal">Pure. Fresh. Local.</h2>
+            <h1 class="reveal">Next Generation <br><span>Hydration.</span></h1>
+            <p class="reveal">Advanced RO + UV + Ozone technology delivering the gold standard of water to Bhagalpur.</p>
+            <div class="hero-btns reveal">
+                <a href="#can-section" class="btn-main">Explore Products</a>
+            </div>
         </div>
-        <div class="hero-image">
-            <img src="bottle.png" alt="Kanwaa Bottle">
+        <div class="hero-visual">
+            <img src="bottle.png" class="floating" alt="Bottle">
         </div>
     </section>
 
-    <section id="products" class="products-section">
-        <h2 class="section-title">Hamare Products</h2>
-        <div class="product-grid">
-            
-            <div class="product-card">
-                <div class="tag green">Bihpur Only</div>
-                <img src="can-20l.png" alt="20 Litre Can">
-                <h3>20 Litre Can</h3>
-                <p class="price">₹100.00</p>
-                <p class="desc">Monthly Subscription Available</p>
-                <div class="qty-control">
-                    <button onclick="changeQty('can20', -1)">-</button>
-                    <span id="can20-qty">0</span>
-                    <button onclick="changeQty('can20', 1)">+</button>
-                </div>
+    <section id="can-section" class="product-reveal-section">
+        <div class="product-container">
+            <div class="product-image">
+                <img src="can-20l.png" alt="20L Can">
             </div>
-
-            <div class="product-card">
-                <div class="tag blue">Bulk Order Only</div>
-                <img src="bottle.png" alt="1 Litre Bottle">
-                <h3>1 Litre Bottle</h3>
-                <p class="price">₹12.00</p>
-                <p class="desc">Min. 50 Boxes (600 Bottles)</p>
-                <div class="qty-control">
-                    <button onclick="changeQty('b1l', -1)">-</button>
-                    <span id="b1l-qty">0</span>
-                    <button onclick="changeQty('b1l', 1)">+</button>
+            <div class="product-info">
+                <span class="premium-tag">DAILY ESSENTIAL</span>
+                <h2>20 Litre Premium Jar</h2>
+                <p>Perfect for homes and offices in Bihpur. Every drop undergoes a 7-stage purification process to ensure your health.</p>
+                <div class="specs">
+                    <div class="spec-item"><i class="fas fa-check-circle"></i> Monthly Subscription</div>
+                    <div class="spec-item"><i class="fas fa-truck"></i> Free Bihpur Delivery</div>
                 </div>
-            </div>
-
-            <div class="product-card">
-                <div class="tag blue">Bulk Order Only</div>
-                <img src="bottle-500ml.png" alt="500ml Bottle">
-                <h3>500ml Bottle</h3>
-                <p class="price">₹8.00</p>
-                <p class="desc">Min. 50 Boxes (600 Bottles)</p>
-                <div class="qty-control">
-                    <button onclick="changeQty('b500', -1)">-</button>
-                    <span id="b500-qty">0</span>
-                    <button onclick="changeQty('b500', 1)">+</button>
+                <div class="price-action">
+                    <span class="price">₹100</span>
+                    <div class="qty">
+                        <button onclick="changeQty('can20', -1)">-</button>
+                        <span id="can20-qty">0</span>
+                        <button onclick="changeQty('can20', 1)">+</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="order-footer">
-        <div class="total-display">Total Amount: <span id="total-amt">₹0</span></div>
-        <button class="btn-order" onclick="sendToWhatsApp()"><i class="fab fa-whatsapp"></i> Order on WhatsApp</button>
+    <section id="bottle-section" class="dark-section">
+        <div class="section-header">
+            <h2>Retail & Events Bulk Pack</h2>
+            <p>Khagaria | Bhagalpur | Purnea</p>
+        </div>
+        <div class="retail-grid">
+            <div class="retail-card">
+                <img src="bottle.png" alt="1L">
+                <h3>1 Litre Classic</h3>
+                <p>Bulk Order Only (Min. 50 Boxes)</p>
+                <div class="price-action">
+                    <span class="price">₹12</span>
+                    <div class="qty">
+                        <button onclick="changeQty('b1l', -1)">-</button>
+                        <span id="b1l-qty">0</span>
+                        <button onclick="changeQty('b1l', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="retail-card">
+                <img src="bottle-500ml.png" alt="500ml">
+                <h3>500ml Compact</h3>
+                <p>Bulk Order Only (Min. 50 Boxes)</p>
+                <div class="price-action">
+                    <span class="price">₹8</span>
+                    <div class="qty">
+                        <button onclick="changeQty('b500', -1)">-</button>
+                        <span id="b500-qty">0</span>
+                        <button onclick="changeQty('b500', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="checkout-bar" class="checkout-bar hide">
+        <div class="total-wrap">
+            <span>Estimated Total</span>
+            <h3 id="total-amt">₹0</h3>
+        </div>
+        <button class="btn-final" onclick="sendToWhatsApp()">
+            Place Order <i class="fab fa-whatsapp"></i>
+        </button>
     </div>
 
     <script src="script.js"></script>
