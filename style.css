@@ -1,0 +1,21 @@
+/* General Style */
+body { font-family: sans-serif; margin: 0; padding: 0; background: #f4f9ff; }
+header { background: #fff; padding: 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); sticky; top: 0; }
+nav a { margin: 0 15px; text-decoration: none; color: #333; font-weight: bold; }
+nav a.active { color: #0056b3; border-bottom: 2px solid #0056b3; }
+.logo img { height: 40px; }
+
+/* Hero Section */
+.hero { height: 70vh; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
+.hero-content { background: rgba(0,0,0,0.4); padding: 40px; border-radius: 10px; }
+.btn { background: #0056b3; color: white; padding: 12px 25px; border-radius: 5px; text-decoration: none; border: none; cursor: pointer; }
+
+/* Content Layout */
+.content-page { padding: 50px 10%; text-align: center; }
+.product-grid, .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px; }
+.prod, .step-card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.prod img { width: 100%; height: 150px; object-fit: contain; }
+
+/* Order Form */
+.order-box { max-width: 400px; margin: 50px auto; background: white; padding: 30px; border-radius: 10px; text-align: center; }
+input, select { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; }
